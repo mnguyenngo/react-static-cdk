@@ -44,3 +44,49 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+## React Website on CDK
+
+- https://medium.com/swlh/aws-cdk-and-typescript-deploy-a-static-react-app-to-s3-df74193e9e3d
+- https://www.youtube.com/watch?v=Y1_pM_C-cJQ
+
+### Create the project directory
+
+```bash
+npx create-react-app cdk-react --template typescript
+```
+
+See https://create-react-app.dev/.
+
+### Create cdk directory in project
+
+```bash
+mkdir cdk
+cd cdk
+cdk init app --language typescript
+```
+
+### Install CDK dependencies
+
+```bash
+yarn add @aws-cdk/aws-s3 @aws-cdk/aws-s3-deployment @aws-cdk/aws-cloudfront
+```
+
+### Add the initial CDK resources
+
+See this [commit](https://github.com/mnguyenngo/react-static-cdk/commit/6b8bf70ec4b8130d74bfd8e505ca0a235a4ce07a).
+
+### Bootstrap CDK
+Run this if this is your first time deploying CDK to your AWS account.
+
+```bash
+cdk deploy
+```
+
+### Synthesize and Deploy CDK
+
+```bash
+cdk synth
+cdk deploy
+```
